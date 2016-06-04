@@ -37,7 +37,7 @@ module.exports = {
 
     middleware: function() {
         return function(req, res, next) {
-            req.isSpider = isSpider.bind(undefined, req.get('user-agent'))
+            req.isSpider = isSpider.bind(undefined, req.headers['user-agent'])
             next()
         }
     }
